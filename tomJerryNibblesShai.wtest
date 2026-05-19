@@ -1,0 +1,33 @@
+import tomJerryNibblesShai.*
+
+describe "Prueba del comportamiento de Tom cuando corre y cuando come." {
+  test "Velocidad máxima y energía de Tom" {
+    assert.equals(10, tom.velocidadMax())
+    assert.equals(50, tom.energia())
+    // tom se come a jerry
+    tom.comer(jerry)
+    assert.equals(15, tom.velocidadMax())
+    assert.equals(102, tom.energia())
+    // tom corre 24 mts
+    tom.correr(24)
+    assert.equals(14, tom.velocidadMax())
+    assert.equals(90, tom.energia())
+    // tom se come a nibbles
+    tom.comer(nibbles)
+    assert.equals(18, tom.velocidadMax())
+    assert.equals(137, tom.energia())
+    // jerry cumple 3 años y tom se lo vuelve a comer
+    jerry.cumplirAños() 
+    jerry.cumplirAños() 
+    jerry.cumplirAños()
+    tom.comer(jerry)
+    assert.equals(29, tom.velocidadMax())
+    assert.equals(249, tom.energia())
+    // tom corre 38 mts
+    tom.correr(38)
+    assert.equals(28, tom.velocidadMax())
+    assert.equals(230, tom.energia())
+  }
+}
+
+ 
